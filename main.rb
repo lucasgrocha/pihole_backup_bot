@@ -15,7 +15,7 @@ Telegram::Bot::Client.run(token, logger: Logger.new($stderr)) do |bot|
   bot.logger.info('Bot has been started')
 
   available_chat_ids.each do |chat_id|
-    bot.api.send_message(chat_id:, text: "Hey here's your pihole backup! 🍒")
+    bot.api.send_message(chat_id:, text: "Hey, here's your pihole backup! 🍒")
     bot.api.send_document(chat_id:,
                           document: Faraday::UploadIO.new(filename_and_path,
                                                           'application/gzip-compressed-tar'))
